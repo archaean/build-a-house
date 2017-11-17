@@ -1,0 +1,11 @@
+nothing foundation
+foundation walls
+walls roof
+walls windows
+walls plumbing
+walls electrical
+electrical fixtures
+roof finishings
+windows finishings
+walls finishings
+fixtures finishings

@@ -36,7 +36,7 @@ class Construction():
 
     def get_graph(self):
         '''
-        Gets the graph representation (nodes and edges) of the construction as a dictionary
+        Gets the graph representation (dictionary of nodes -> edges) of the construction as a dictionary
 
         :return: a dict of string -> set of string
         '''
@@ -45,6 +45,15 @@ class Construction():
             d[y].add(x)
         return dict(d)
 
+
+    def build(self):
+        '''
+        Constructs a linear order of build steps needed to construct a house
+
+        :return: list of strings
+        '''
+        #TODO IMPLEMENT THIS METHOD
+        return ['']
 
 class CSV_Construction(Construction):
     '''
@@ -58,22 +67,7 @@ class CSV_Construction(Construction):
         next(csvreader, None) #Skip header
         return [(row[0], row[1]) for row in csvreader]
 
-
-class TXT_Construction(Construction):
-    @staticmethod
-    def read_data(file):
-        pass
-
-
-def build(construction):
-    '''
-
-    :param construction: Construction object
-    :return: list of strings
-    '''
-
-    #IMPLEMENT THIS METHOD
-
+#TODO optionally create Construction object using data/house_step.txt file
 
 def main():
     file = open(sys.argv[1], 'rb')
@@ -81,6 +75,7 @@ def main():
     print 'Steps:', construction.get_steps()
     print 'Dependencies:', construction.get_dependency_list()
     print 'Graph:', construction.get_graph()
+    print 'Build', construction.build()
 
 if __name__ == '__main__':
     main()
